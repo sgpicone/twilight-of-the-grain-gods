@@ -1,5 +1,46 @@
 # TwilightOfTheGrainGods
 
+## Features
+
+### Brew Day logs
+
+#### MVP Candidates marked in *italics*
+
+- *View a list of brew days*
+- *See details about a single brew day*
+  - *See water chemistry log*
+  - *See yeast count/log*
+  - *See recipe/brew log*
+  - Print brew day log (entirely or portion)
+- *Create a new brew day entry*
+  - *Create water chem log*
+  - *Create yeast count log*
+  - *Create recipe/brew log*
+    - Choose from list of recipes or go rogue
+- Update an existing brew day entry
+  - Update/delete water chem
+  - Update/delete yeast count
+  - Update/delete recipe/brew log
+- *Delete a brew day entry*
+
+### Stretch Goals
+
+#### Recipes
+
+- Create new recipe
+- View list of recipes
+- View single recipe
+- Update existing recipe
+- Delete existing recipe
+
+#### Mash profiles
+
+- Create new mash profile
+- View list of mash profiles
+- View single mash profile
+- Update existing mash profile
+- Delete existing mash profile
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
@@ -25,3 +66,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
