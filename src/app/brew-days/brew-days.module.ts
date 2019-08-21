@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BrewDaysRoutingModule } from './brew-days-routing.module';
-import { ListComponent } from './list/list.component';
-import { CreateComponent } from './create/create.component';
-import { DetailComponent } from './detail/detail.component';
+import { BrewDaysListComponent } from './brew-days-list/brew-days-list.component';
+import { BrewDaysCreateComponent } from './brew-days-create/brew-days-create.component';
+import { BrewDaysDetailComponent } from './brew-days-detail/brew-days-detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [ListComponent, CreateComponent, DetailComponent],
+  declarations: [BrewDaysListComponent, BrewDaysCreateComponent, BrewDaysDetailComponent],
   imports: [
     CommonModule,
+    SharedModule,
     BrewDaysRoutingModule
   ]
 })
