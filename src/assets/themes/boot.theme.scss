@@ -1,0 +1,13 @@
+$color1: rgba(0, 38, 66, 1);
+$color2: rgba(132, 0, 50, 1);
+$color3: rgba(229, 149, 0, 1);
+$color4: rgba(229, 218, 218, 1);
+$color5: rgba(2, 4, 15, 1);
+
+$theme-colors: (
+    "primary": $color1,
+    "danger": $color2,
+    "warn": $color3,
+    "default": $color4,
+    );
+    @import "node_modules/bootstrap/scss/bootstrap";

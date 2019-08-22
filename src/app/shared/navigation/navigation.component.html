@@ -6,26 +6,31 @@
       </a>
       <span class="navbar-brand">Twilight of the Grain Gods</span>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">
-          Link <span class="sr-only">(current)</span>
-        </a></li>
-      <li><a href="#">Link</a></li>
-      <li class="dropdown" dropdown>
-        <!-- {1} -->
-        <a dropdownToggle role="button">
-          <!-- {2} -->
-          Dropdown <span class="caret"></span></a>
-        <ul *dropdownMenu class="dropdown-menu">
-          <!-- {3} -->
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['brew-days']">Brew Days</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['recipes']">Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['inventory']">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                  aria-controls="dropdown-basic">
+            Create <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+            <li role="menuitem"><a class="dropdown-item" [routerLink]="['/brew-days/create']">Brew Day Log</a></li>
+            <li role="menuitem"><a class="dropdown-item" [routerLink]="['nowhere']">Recipe</a></li>
+            <li role="menuitem"><a class="dropdown-item" [routerLink]="['nowhere']">Mash Profile</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a class="dropdown-item" >Jawn</a>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>

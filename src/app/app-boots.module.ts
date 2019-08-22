@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BsDropdownModule } from 'ngx-bootstrap';
-import { BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BsDropdownModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDropdownModule.forRoot()
+
   ],
-  exports: [
-    BsDropdownModule,
-    BsDatepickerModule
-  ]
+  exports: [ BsDropdownModule ]
 })
 export class AppBootsModule { }

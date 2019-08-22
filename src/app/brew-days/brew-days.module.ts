@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { BrewDaysRoutingModule } from './brew-days-routing.module';
 import { BrewDaysListComponent } from './brew-days-list/brew-days-list.component';
@@ -12,7 +13,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    BrewDaysRoutingModule
+    BrewDaysRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class BrewDaysModule { }

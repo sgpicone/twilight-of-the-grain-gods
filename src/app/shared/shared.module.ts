@@ -5,11 +5,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppBootsModule } from '../app-boots.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [NotFoundComponent, HeaderComponent, FooterComponent, NavigationComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AppBootsModule,
+    RouterModule
   ],
   exports: [NotFoundComponent, HeaderComponent, FooterComponent, NavigationComponent]
 })
