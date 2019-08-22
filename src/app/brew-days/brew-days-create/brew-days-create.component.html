@@ -1,1 +1,33 @@
-fart bnox
+<div class="container">
+    <form [formGroup]="brewDayForm">
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="brewName">Recipe Name</label>
+                <input type="text" class="form-control" placeholder="Enter recipe name" formControlName="brewName">
+                <div class="text-danger" *ngIf="brewName.invalid && (brewName.dirty || brewName.touched)">
+                    <small *ngIf="brewName.errors.required">Recipe name is required</small>
+                </div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="trialNo">Trial</label>
+                <input type="number" class="form-control" placeholder="#" formControlName="trialNo">
+            </div>
+            <div class="form-group col-sm-5">
+                <label for="brewDate">Date</label>
+                <input type="date" class="form-control" placeholder="Brew date" formControlName="brewDate">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="brewer">Brewer Name</label>
+                <input type="text" class="form-control" placeholder="Enter brewer name(s)" formControlName="brewer">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="targetVolume">Target Volume</label>
+                <input type="number" class="form-control" placeholder="# gals" formControlName="targetVolume">
+            </div>
+        </div>
+        <div class="row">
+            <div [formGroup]="recipe"></div>
+        </div>
+    </form>
+    {{brewDayForm.value | json}}
+</div>
