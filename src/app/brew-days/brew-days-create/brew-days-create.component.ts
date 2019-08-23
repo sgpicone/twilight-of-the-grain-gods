@@ -16,7 +16,7 @@ export class BrewDaysCreateComponent implements OnInit {
     brewDate: [new Date(), Validators.required],
     targetVolume: ['', Validators.required],
     recipe: this.fb.group({
-      grain: this.fb.array([this.createGrain()]),
+      grainBill: this.fb.array([this.createGrain()]),
       hops: this.fb.array([this.createHop()]),
       salts: this.fb.array([this.createSalt()])
     })
@@ -29,21 +29,21 @@ export class BrewDaysCreateComponent implements OnInit {
 
   createGrain(): FormGroup {
     return this.fb.group({
-      name: ['', Validators.required],
+      name: ['fartbox 20l', Validators.required],
       amount: ['', Validators.required],
-      color: ['', Validators.required],
+      color: ['fuck you', Validators.required],
       brand: [''],
       notes: ['']
     });
   }
 
   addGrain(): void {
-    const grainArray = this.brewDayForm.get('recipe').get('grain') as FormArray;
+    const grainArray = this.brewDayForm.get('recipe').get('grainBill') as FormArray;
     grainArray.push(this.createGrain());
   }
 
   removeGrain(index: number): void {
-    const grainArray = this.brewDayForm.get('recipe').get('grain') as FormArray;
+    const grainArray = this.brewDayForm.get('recipe').get('grainBill') as FormArray;
     grainArray.removeAt(index);
   }
 
@@ -86,10 +86,17 @@ export class BrewDaysCreateComponent implements OnInit {
     saltArray.removeAt(index);
   }
 
+  click() {
+    console.log(this.grainBill);
+  }
+
   get brewName() { return this.brewDayForm.get('brewName'); }
   get trialNo() { return this.brewDayForm.get('trialNo'); }
   get brewer() { return this.brewDayForm.get('brewer'); }
   get brewDate() { return this.brewDayForm.get('brewDate'); }
   get targetVolume() { return this.brewDayForm.get('targetVolume'); }
+  get grainBill() { return this.brewDayForm.get('recipe').get('grainBill'); }
+  get hops() { return this.brewDayForm.get('recipe').get('hops'); }
+  get salts() { return this.brewDayForm.get('recipe').get('salts'); }
 
 }

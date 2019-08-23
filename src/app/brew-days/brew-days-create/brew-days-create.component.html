@@ -26,7 +26,27 @@
             </div>
         </div>
         <div class="row">
-            <div [formGroup]="recipe"></div>
+            <div formGroupName="recipe">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            Grain
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-row" *ngFor="let grain of grainBill.controls; let i = index">
+                                <div [formGroupName]="i">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" formControlName="name">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- https://medium.com/@joshblf/dynamic-nested-reactive-forms-in-angular-654c1d4a769a -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </form>
     {{brewDayForm.value | json}}
