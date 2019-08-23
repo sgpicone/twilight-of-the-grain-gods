@@ -1,4 +1,12 @@
-<div class="container">
+<form [formGroup]="brewDayForm">
+    Brew Day: {{brewDayForm.controls.brewDate.value}}
+
+    <p>Recipe</p>
+    <app-recipe [recipeForm]="brewDayForm.controls.recipe"></app-recipe>
+</form>
+
+
+<!-- <div class="container">
     <form [formGroup]="brewDayForm">
         <div class="row">
             <div class="form-group col-sm-5">
@@ -41,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- https://medium.com/@joshblf/dynamic-nested-reactive-forms-in-angular-654c1d4a769a -->
+                            https://medium.com/@joshblf/dynamic-nested-reactive-forms-in-angular-654c1d4a769a
                         </div>
                     </div>
                     
@@ -50,4 +58,4 @@
         </div>
     </form>
     {{brewDayForm.value | json}}
-</div>
+</div> -->

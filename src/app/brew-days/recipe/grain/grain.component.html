@@ -1,0 +1,26 @@
+<form [formGroup]="grainForm">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" placeholder="Grain name" formControlName="name">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Amount</label>
+      <input type="number" class="form-control" placeholder="# lbs" formControlName="amount">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Color</label>
+      <input type="number" class="form-control" placeholder="SRM/L value" formControlName="color">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Brand</label>
+      <input type="text" class="form-control" placeholder="Brand name" formControlName="brand">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-10 col-md-offset-1">
+      <label for="name">Notes</label>
+      <input type="textarea" class="form-control" placeholder="Any additional notes" formControlName="notes">
+    </div>
+  </div>
+</form>

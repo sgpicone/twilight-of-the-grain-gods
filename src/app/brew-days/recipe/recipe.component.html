@@ -1,0 +1,11 @@
+<form [formGroup]="recipeForm">
+  Recipe: {{recipeForm.controls.name.value}}
+
+  <p>Grain</p>
+  <button class="btn btn-primary" (click)="addGrain()">Add Grain</button>
+  <ul>
+    <li *ngFor="let grain of recipeForm.controls.grainBill?.controls; let i = index">
+      <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
+    </li>
+  </ul>
+</form>
