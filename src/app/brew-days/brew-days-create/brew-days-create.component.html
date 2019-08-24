@@ -1,9 +1,60 @@
-<form [formGroup]="brewDayForm">
-    Brew Day: {{brewDayForm.controls.brewDate.value}}
+<div class="container">
 
-    <p>Recipe</p>
-    <app-recipe [recipeForm]="brewDayForm.controls.recipe"></app-recipe>
-</form>
+    <form [formGroup]="brewDayForm">
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="brewDate">Date</label>
+                <input type="date" class="form-control" formControlName="brewDate">
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="trialNo">Trial</label>
+                <input type="number" class="form-control" placeholder="#" formControlName="trialNumber">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="brewer">Brewer Name</label>
+                <input type="text" class="form-control" placeholder="Enter brewer name(s)" formControlName="brewerName">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="targetVolume">Target Volume</label>
+                <input type="number" class="form-control" placeholder="# gals" formControlName="targetVolume">
+            </div>
+        </div>
+        <div class="row">
+            <p>Recipe</p>
+            <app-recipe [recipeForm]="brewDayForm.controls.recipe"></app-recipe>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="preBoilVolume">Pre-boil Volume</label>
+                <input type="number" class="form-control" placeholder="# gals" formControlName="preBoilVolume">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="preBoilGravity">Pre-boil Gravity</label>
+                <input type="number" class="form-control" placeholder="#" formControlName="preBoilGravity">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="volumeIntoFermenter">Volume into Fermenter</label>
+                <input type="number" class="form-control" placeholder="# gals" formControlName="volumeIntoFermenter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="originalGravity">Original Gravity</label>
+                <input type="number" class="form-control" placeholder="#" formControlName="originalGravity">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <label for="notes">Notes</label>
+                <input type="textarea" class="form-control" formControlName="notes">
+            </div>
+        </div>
+    </form>
+</div>
+{{brewDayForm.value | json}}
 
 
 <!-- <div class="container">

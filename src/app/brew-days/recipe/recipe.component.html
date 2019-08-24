@@ -1,5 +1,55 @@
 <form [formGroup]="recipeForm">
-  Recipe: {{recipeForm.controls.name.value}}
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <label for="name">name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Grain <button class="btn btn-sm btn-primary" (click)="addGrain()">+ Add Grain</button>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngFor="let grain of recipeForm.controls.grainBill?.controls; let i=index"
+        [class.bg-light]="i%2==0">
+        <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Hops <button class="btn btn-sm btn-primary" (click)="addHops()">+ Add Hops</button>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngFor="let hops of recipeForm.controls.hops?.controls; let i=index"
+        [class.bg-light]="i%2==0">
+        <app-hops [index]="i" [hopsForm]="hops" (deleteGops)="deleteHops($event)"></app-hops>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Additions <button class="btn btn-sm btn-primary" (click)="addAdditions()">+ Add Additions</button>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngFor="let addition of recipeForm.controls.additions?.controls; let i=index"
+        [class.bg-light]="i%2==0">
+        <app-addition [index]="i" [additionForm]="addition" (deleteAddition)="deleteAddition($event)"></app-addition>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header">
+        Salts <button class="btn btn-sm btn-primary" (click)="addSalts()">+ Add Salts</button>
+      </div>
+      <div class="card-body">
+        <div class="row" *ngFor="let salt of recipeForm.controls.salts?.controls; let i=index"
+          [class.bg-light]="i%2==0">
+          <app-salt [index]="i" [saltForm]="salt" (deleteSalt)="deleteSalt($event)"></app-salt>
+        </div>
+      </div>
+    </div>
+  <!-- Recipe: {{recipeForm.controls.name.value}}
 
   <p>Grain</p>
   <button class="btn btn-primary" (click)="addGrain()">Add Grain</button>
@@ -7,5 +57,5 @@
     <li *ngFor="let grain of recipeForm.controls.grainBill?.controls; let i = index">
       <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
     </li>
-  </ul>
+  </ul> -->
 </form>

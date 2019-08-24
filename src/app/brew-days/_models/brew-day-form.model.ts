@@ -20,5 +20,8 @@ export class BrewDayForm {
         if (brewDay.trialNumber) {
             this.trialNumber.setValue(brewDay.trialNumber);
         }
+        if (brewDay.brewDate) {
+            this.brewDate.setValue(brewDay.brewDate);
+        }
     }
 }
