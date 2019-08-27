@@ -8,9 +8,9 @@ import { BrewDaysCreateComponent } from './brew-days-create/brew-days-create.com
 import { BrewDaysDetailComponent } from './brew-days-detail/brew-days-detail.component';
 import { SharedModule } from '../shared/shared.module';
 import { GrainComponent } from './recipe/grain/grain.component';
-import { HopsComponent } from './recipe/hops/hops.component';
-import { SaltsComponent } from './recipe/salts/salts.component';
-import { AdditionsComponent } from './recipe/additions/additions.component';
+import { HopComponent } from './recipe/hop/hop.component';
+import { SaltComponent } from './recipe/salt/salt.component';
+import { AdditionComponent } from './recipe/addition/addition.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { BrewDayFormService } from './brew-day-form.service';
 
@@ -20,9 +20,9 @@ import { BrewDayFormService } from './brew-day-form.service';
     BrewDaysCreateComponent,
     BrewDaysDetailComponent,
     GrainComponent,
-    HopsComponent,
-    SaltsComponent,
-    AdditionsComponent,
+    HopComponent,
+    SaltComponent,
+    AdditionComponent,
     RecipeComponent
   ],
   imports: [

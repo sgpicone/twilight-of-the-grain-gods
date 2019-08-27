@@ -1,8 +1,8 @@
 import { FormControl, FormArray } from '@angular/forms';
 import { Recipe } from './recipe.model';
 import { GrainForm } from '../grain/_models/grain-form.model';
-import { HopForm } from '../hops/_models/hop-form.model';
-import { SaltForm } from '../salts/_models/salt-form.model';
+import { HopForm } from '../hop/_models/hop-form.model';
+import { SaltForm } from '../salt/_models/salt-form.model';
 
 export class RecipeForm {
     name = new FormControl();
