@@ -20,9 +20,9 @@ export class RecipeFormService {
 
   addGrain() {
     const currentRecipe = this.recipeForm.getValue();
-    const currentGrainBill = currentRecipe.get('grainBill') as FormArray;
+    const currentGrains = currentRecipe.get('grains') as FormArray;
 
-    currentGrainBill.push(
+    currentGrains.push(
       this.fb.group(new GrainForm(new Grain()))
     );
 
@@ -31,9 +31,9 @@ export class RecipeFormService {
 
   deleteGrain(index: number) {
     const currentRecipe = this.recipeForm.getValue();
-    const currentGrainBill = currentRecipe.get('grainBill') as FormArray;
+    const currentGrains = currentRecipe.get('grains') as FormArray;
 
-    currentGrainBill.removeAt(index);
+    currentGrains.removeAt(index);
 
     this.recipeForm.next(currentRecipe);
   }

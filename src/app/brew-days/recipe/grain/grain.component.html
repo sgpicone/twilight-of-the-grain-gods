@@ -4,9 +4,15 @@
       <label for="name">Name</label>
       <input type="text" class="form-control" placeholder="Grain name" formControlName="name">
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label for="name">Amount</label>
       <input type="number" class="form-control" placeholder="# lbs" formControlName="amount">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="unit">Unit</label>
+      <select class="form-control" formControlName="amountUnit">
+        <option *ngFor="let unit of units | enumKeys" [value]="unit.key">{{unit.value}}</option>
+      </select>
     </div>
     <div class="form-group col-md-3">
       <label for="name">Color</label>

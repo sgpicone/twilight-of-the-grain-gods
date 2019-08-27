@@ -4,6 +4,7 @@ import { Grain } from './grain.model';
 export class GrainForm {
     name = new FormControl();
     amount = new FormControl();
+    unit = new FormControl();
     color = new FormControl();
     brand = new FormControl();
     notes = new FormControl();
@@ -14,6 +15,9 @@ export class GrainForm {
 
         this.amount.setValue(grain.amount);
         this.amount.setValidators([Validators.required]);
+
+        this.unit.setValue(grain.amountUnit);
+        this.unit.setValidators([Validators.required]);
 
         this.color.setValue(grain.color);
         this.color.setValidators([Validators.required]);

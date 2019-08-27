@@ -10,7 +10,7 @@
       Grain <button class="btn btn-sm btn-primary" (click)="addGrain()">+ Add Grain</button>
     </div>
     <div class="card-body">
-      <div class="row" *ngFor="let grain of recipeForm.controls.grainBill?.controls; let i=index"
+      <div class="row" *ngFor="let grain of recipeForm.controls.grains?.controls; let i=index"
         [class.bg-light]="i%2==0">
         <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
       </div>
@@ -54,7 +54,7 @@
   <p>Grain</p>
   <button class="btn btn-primary" (click)="addGrain()">Add Grain</button>
   <ul>
-    <li *ngFor="let grain of recipeForm.controls.grainBill?.controls; let i = index">
+    <li *ngFor="let grain of recipeForm.controls.grains?.controls; let i = index">
       <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
     </li>
   </ul> -->

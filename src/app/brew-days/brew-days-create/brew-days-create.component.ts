@@ -19,9 +19,9 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.brewDayFormSub = this.brewDayFormService.brewDayForm$
-    .subscribe(brewDay => {
-      this.brewDayForm = brewDay;
-      this.recipe = this.brewDayForm.get('recipe') as FormGroup;
+      .subscribe(brewDay => {
+        this.brewDayForm = brewDay;
+        this.recipe = this.brewDayForm.get('recipe') as FormGroup;
         console.log(this.brewDayForm);
         console.log(this.recipe);
       });
@@ -43,7 +43,7 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   //   brewDate: [new Date(), Validators.required],
   //   targetVolume: ['', Validators.required],
   //   recipe: this.fb.group({
-  //     grainBill: this.fb.array([this.createGrain()]),
+  //     grains: this.fb.array([this.createGrain()]),
   //     hops: this.fb.array([this.createHop()]),
   //     salts: this.fb.array([this.createSalt()])
   //   })
@@ -66,12 +66,12 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   // }
 
   // addGrain(): void {
-  //   const grainArray = this.brewDayForm.get('recipe').get('grainBill') as FormArray;
+  //   const grainArray = this.brewDayForm.get('recipe').get('grains') as FormArray;
   //   grainArray.push(this.createGrain());
   // }
 
   // removeGrain(index: number): void {
-  //   const grainArray = this.brewDayForm.get('recipe').get('grainBill') as FormArray;
+  //   const grainArray = this.brewDayForm.get('recipe').get('grains') as FormArray;
   //   grainArray.removeAt(index);
   // }
 
@@ -115,7 +115,7 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   // }
 
   // click() {
-  //   console.log(this.grainBill);
+  //   console.log(this.grains);
   // }
 
   // get brewName() { return this.brewDayForm.get('brewName'); }
@@ -123,6 +123,6 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   // get brewer() { return this.brewDayForm.get('brewer'); }
   // get brewDate() { return this.brewDayForm.get('brewDate'); }
   // get targetVolume() { return this.brewDayForm.get('targetVolume'); }
-  // get grainBill() { return this.brewDayForm.get('recipe').get('grainBill'); }
+  // get grains() { return this.brewDayForm.get('recipe').get('grains'); }
   // get hops() { return this.brewDayForm.get('recipe').get('hops'); }
   // get salts() { return this.brewDayForm.get('recipe').get('salts'); }

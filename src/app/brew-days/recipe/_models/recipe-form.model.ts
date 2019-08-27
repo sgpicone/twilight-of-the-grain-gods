@@ -3,10 +3,11 @@ import { Recipe } from './recipe.model';
 import { GrainForm } from '../grain/_models/grain-form.model';
 import { HopForm } from '../hop/_models/hop-form.model';
 import { SaltForm } from '../salt/_models/salt-form.model';
+import { AdditionForm } from '../addition/_models/addition-form.model';
 
 export class RecipeForm {
     name = new FormControl();
-    grainBill = new FormArray([]);
+    grains = new FormArray([]);
     hops = new FormArray([]);
     salts = new FormArray([]);
     additions = new FormArray([]);
@@ -18,16 +19,16 @@ export class RecipeForm {
             this.name.setValue('GrainDrain');
         }
 
-        if (recipe.grainBill) {
-            this.grainBill.setValue(recipe.grainBill);
+        if (recipe.grains) {
+            this.grains.setValue(recipe.grains);
         } else {
-            this.grainBill.setValue(new Array<GrainForm>())
+            this.grains.setValue(new Array<GrainForm>());
         }
-        
+
         if (recipe.hops) {
             this.hops.setValue(recipe.hops);
         } else {
-            this.hops.setValue(new Array<HopForm>())
+            this.hops.setValue(new Array<HopForm>());
         }
 
         if (recipe.salts) {
@@ -37,8 +38,9 @@ export class RecipeForm {
         }
 
         if (recipe.additions) {
-            this.additions.setValue(recipe.grainBill);
+            this.additions.setValue(recipe.additions);
         } else {
+            this.additions.setValue(new Array<AdditionForm>());
         }
     }
 }

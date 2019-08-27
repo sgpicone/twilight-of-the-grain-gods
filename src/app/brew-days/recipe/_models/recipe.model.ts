@@ -5,7 +5,7 @@ import { Addition } from '../addition/_models/addition.model';
 
 export class Recipe {
     name: string;
-    grainBill: Array<Grain>;
+    grains: Array<Grain>;
     hops: Array<Hop>;
     salts: Array<Salt>;
     additions: Array<Addition>;

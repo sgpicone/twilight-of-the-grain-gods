@@ -17,14 +17,14 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.recipeForm);
-   }
+  }
 
   addGrain() {
-      const currentGrainBill = this.recipeForm.get('grainBill') as FormArray;
+    const currentGrains = this.recipeForm.get('grains') as FormArray;
 
-      currentGrainBill.push(
-        this.fb.group(new GrainForm(new Grain()))
-      );
+    currentGrains.push(
+      this.fb.group(new GrainForm(new Grain()))
+    );
     console.log(this.recipeForm);
   }
 
@@ -36,7 +36,7 @@ export class RecipeComponent implements OnInit {
   // recipeFormInvalid = false;
 
   // name: FormControl;
-  // grainBill: FormArray;
+  // grains: FormArray;
   // hops: FormArray;
   // salts: FormArray;
   // additions: FormArray;
@@ -48,7 +48,7 @@ export class RecipeComponent implements OnInit {
   //     .subscribe(recipe => {
   //       this.recipeForm = recipe;
   //       this.name = this.recipeForm.get('name') as FormControl;
-  //       this.grainBill = this.recipeForm.get('grainBill') as FormArray;
+  //       this.grains = this.recipeForm.get('grains') as FormArray;
   //       this.hops = this.recipeForm.get('hops') as FormArray;
   //       this.salts = this.recipeForm.get('salts') as FormArray;
   //       this.additions = this.recipeForm.get('additions') as FormArray;
