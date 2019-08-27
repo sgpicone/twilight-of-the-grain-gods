@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { EnumKeysPipe } from 'src/app/shared/enum-keys.pipe';
+import { UnitEnum } from '../../../shared/unit';
 
 @Component({
   selector: 'app-grain',

@@ -1,7 +1,9 @@
+import { UnitEnum } from '../../../../shared/unit';
+
 export class Addition {
     name: string;
     amount: number;
-    amountUnit: Unit = Unit.OUNCES;
+    amountUnit: UnitEnum = UnitEnum.OUNCES;
     additionTime: number;
     purpose: string;
     notes: string;

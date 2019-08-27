@@ -1,4 +1,4 @@
-enum UnitEnum {
+export enum UnitEnum {
     OUNCES = 'oz',
     POUNDS = 'lbs',
     GRAMS = 'g',

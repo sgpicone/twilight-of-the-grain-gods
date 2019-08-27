@@ -15,8 +15,6 @@ export class RecipeForm {
     constructor(recipe: Recipe) {
         if (recipe.name) {
             this.name.setValue(recipe.name);
-        } else {
-            this.name.setValue('GrainDrain');
         }
 
         if (recipe.grains) {
