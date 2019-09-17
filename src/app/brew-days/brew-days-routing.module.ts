@@ -4,11 +4,12 @@ import { BrewDaysListComponent } from './brew-days-list/brew-days-list.component
 import { BrewDaysCreateComponent } from './brew-days-create/brew-days-create.component';
 import { BrewDaysDetailComponent } from './brew-days-detail/brew-days-detail.component';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
+import { BrewLogCreateComponent } from './brew-log-create/brew-log-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: BrewDaysListComponent },
-  { path: 'create', component: BrewDaysCreateComponent },
+  { path: 'create', component: BrewLogCreateComponent },
   { path: 'detail/:id', component: BrewDaysDetailComponent },
   { path: '**', component: NotFoundComponent }
 ];

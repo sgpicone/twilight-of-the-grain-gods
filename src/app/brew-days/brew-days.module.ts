@@ -14,6 +14,7 @@ import { AdditionComponent } from './recipe/addition/addition.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { BrewDayFormService } from './brew-day-form.service';
 import { AppBootsModule } from '../app-boots.module';
+import { BrewLogCreateComponent } from './brew-log-create/brew-log-create.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppBootsModule } from '../app-boots.module';
     HopComponent,
     SaltComponent,
     AdditionComponent,
-    RecipeComponent
+    RecipeComponent,
+    BrewLogCreateComponent
   ],
   imports: [
     CommonModule,
