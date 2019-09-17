@@ -13,6 +13,7 @@ import { SaltComponent } from './recipe/salt/salt.component';
 import { AdditionComponent } from './recipe/addition/addition.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { BrewDayFormService } from './brew-day-form.service';
+import { AppBootsModule } from '../app-boots.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BrewDayFormService } from './brew-day-form.service';
     SharedModule,
     BrewDaysRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppBootsModule
   ],
   providers: [BrewDayFormService]
 })
