@@ -2,7 +2,7 @@ import { FormControl, FormArray } from '@angular/forms';
 import { Recipe } from './recipe.model';
 import { GrainForm } from '../grain/_models/grain-form.model';
 import { HopForm } from '../hop/_models/hop-form.model';
-import { SaltForm } from '../salt/_models/salt-form.model';
+import { SaltForm } from '../../water/salt/_models/salt-form.model';
 import { AdditionForm } from '../addition/_models/addition-form.model';
 
 export class RecipeForm {

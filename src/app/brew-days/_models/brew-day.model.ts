@@ -6,10 +6,12 @@ export class BrewDay {
     brewDate: Date;
     targetVolume: number;
     recipe: Recipe;
+    water: 
     preBoilVolume: number;
     preBoilGravity: number;
     volumeIntoFermenter: number;
     originalGravity: number;
+    finalGravity: number;
     notes: string;
 
     constructor(brewDate: Date, recipe?: Recipe) {

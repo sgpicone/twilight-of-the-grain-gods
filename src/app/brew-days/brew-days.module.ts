@@ -9,12 +9,14 @@ import { BrewDaysDetailComponent } from './brew-days-detail/brew-days-detail.com
 import { SharedModule } from '../shared/shared.module';
 import { GrainComponent } from './recipe/grain/grain.component';
 import { HopComponent } from './recipe/hop/hop.component';
-import { SaltComponent } from './recipe/salt/salt.component';
+import { SaltComponent } from './water/salt/salt.component';
 import { AdditionComponent } from './recipe/addition/addition.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { BrewDayFormService } from './brew-day-form.service';
 import { AppBootsModule } from '../app-boots.module';
 import { BrewLogCreateComponent } from './brew-log-create/brew-log-create.component';
+import { WaterComponent } from './water/water.component';
+import { YeastComponent } from './yeast/yeast.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BrewLogCreateComponent } from './brew-log-create/brew-log-create.compon
     SaltComponent,
     AdditionComponent,
     RecipeComponent,
-    BrewLogCreateComponent
+    BrewLogCreateComponent,
+    WaterComponent,
+    YeastComponent
   ],
   imports: [
     CommonModule,

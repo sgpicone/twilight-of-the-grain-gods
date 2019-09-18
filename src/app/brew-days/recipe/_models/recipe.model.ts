@@ -1,6 +1,6 @@
 import { Grain } from '../grain/_models/grain.model';
 import { Hop } from '../hop/_models/hop.model';
-import { Salt } from '../salt/_models/salt.model';
+import { Salt } from '../../water/salt/_models/salt.model';
 import { Addition } from '../addition/_models/addition.model';
 
 export class Recipe {

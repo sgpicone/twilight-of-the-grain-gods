@@ -38,17 +38,6 @@
       </div>
     </div>
   </div>
-  <div class="card">
-      <div class="card-header">
-        Salts <button class="btn btn-sm btn-primary" (click)="addSalts()">+ Add Salts</button>
-      </div>
-      <div class="card-body">
-        <div class="row" *ngFor="let salt of recipeForm.controls.salts?.controls; let i=index"
-          [class.bg-light]="i%2==0">
-          <app-salt></app-salt>
-        </div>
-      </div>
-    </div>
   <!-- Recipe: {{recipeForm.controls.name.value}}
 
   <p>Grain</p>
