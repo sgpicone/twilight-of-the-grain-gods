@@ -1,3 +1,42 @@
-<p>
-  additions works! <button (click)="delete()">Delete</button>
-</p>
+<form [formGroup]="additionForm">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="name">Name <button (click)="delete()">Delete</button></label>
+      <input type="text" class="form-control" placeholder="Addition name" formControlName="name">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="amount">Amount</label>
+      <div class="input-group">
+        <input type="number" class="form-control" formControlName="amount">
+        <div class="input-group-append">
+          <select class="form-control" formControlName="amountUnit">
+            <option *ngFor="let unit of units | enumKeys" [value]="unit.value">{{unit.value}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Alpha %</label>
+      <input type="number" class="form-control" placeholder="AA %" formControlName="alpha">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">IBUs</label>
+      <input type="number" class="form-control" placeholder="IBUS (optional)" formControlName="ibuContent">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Time</label>
+      <input type="number" class="form-control" placeholder="# mins" formControlName="additionTime">
+      <div class="input-group-append">
+        <select class="form-control" formControlName="additionStage">
+          <option *ngFor="let stage of stages | enumKeys" [value]="stage.value">{{stage.value}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-10 col-md-offset-1">
+      <label for="name">Notes</label>
+      <input type="textarea" class="form-control" placeholder="Any additional notes" formControlName="notes">
+    </div>
+  </div>
+</form>

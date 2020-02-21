@@ -4,8 +4,9 @@ import { Validators, FormControl } from '@angular/forms';
 export class AdditionForm {
     name = new FormControl();
     amount = new FormControl();
-    unit = new FormControl();
-    time = new FormControl();
+    amountUnit = new FormControl();
+    additionStage = new FormControl();
+    additionTime = new FormControl();
     purpose = new FormControl();
     notes = new FormControl();
 
@@ -16,11 +17,14 @@ export class AdditionForm {
         this.amount.setValue(addition.amount);
         this.amount.setValidators([Validators.required]);
 
-        this.unit.setValue(addition.amountUnit);
-        this.unit.setValidators([Validators.required]);
+        this.amountUnit.setValue(addition.amountUnit);
+        this.amountUnit.setValidators([Validators.required]);
 
-        this.time.setValue(addition.additionTime);
-        this.time.setValidators([Validators.required]);
+        this.additionStage.setValue(addition.additionStage);
+        this.additionStage.setValidators([Validators.required]);
+
+        this.additionTime.setValue(addition.additionTime);
+        this.additionTime.setValidators([Validators.required]);
 
         this.purpose.setValue(addition.purpose);
 

@@ -2,6 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { GrainForm } from './grain/_models/grain-form.model';
 import { Grain } from './grain/_models/grain.model';
+import { Hop } from './hop/_models/hop.model';
+import { HopForm } from './hop/_models/hop-form.model';
+import { AdditionForm } from './addition/_models/addition-form.model';
+import { Addition } from './addition/_models/addition.model';
 
 @Component({
   selector: 'app-recipe',
@@ -34,7 +38,7 @@ export class RecipeComponent implements OnInit {
 
   addHops() {
     this.currentHops.push(
-      this.fb.group(new GrainForm(new Grain()))
+      this.fb.group(new HopForm(new Hop()))
     );
     console.log(this.recipeForm);
   }
@@ -45,7 +49,7 @@ export class RecipeComponent implements OnInit {
 
   addAdditions() {
     this.currentAdditions.push(
-      this.fb.group(new GrainForm(new Grain()))
+      this.fb.group(new AdditionForm(new Addition()))
     );
     console.log(this.recipeForm);
   }

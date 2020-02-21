@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { UnitEnum } from '../../../shared/unit';
+import { StageEnum } from '../../../shared/stage';
 
 @Component({
   selector: 'app-hop',
@@ -12,6 +14,9 @@ export class HopComponent implements OnInit {
   @Output() deleteHop: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
+
+  units = UnitEnum;
+  stages = StageEnum;
 
   ngOnInit() { }
 
