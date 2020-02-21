@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AppBootsModule } from '../app-boots.module';
 import { RouterModule } from '@angular/router';
 import { EnumKeysPipe } from './enum-keys.pipe';
+import { PdfService } from './pdf/pdf.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EnumKeysPipe } from './enum-keys.pipe';
     FooterComponent,
     NavigationComponent,
     EnumKeysPipe
-  ]
+  ],
+  providers: [PdfService]
 })
 export class SharedModule { }

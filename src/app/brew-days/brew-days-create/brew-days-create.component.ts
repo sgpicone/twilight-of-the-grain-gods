@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { validateConfig } from '@angular/router/src/config';
 import { BrewDayFormService } from '../brew-day-form.service';
 import { Subscription } from 'rxjs';
+import { PdfService } from 'src/app/shared/pdf/pdf.service';
 
 @Component({
   selector: 'app-brew-days-create',
@@ -15,7 +16,7 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   formInvalid = false;
   recipe: FormGroup;
 
-  constructor(private brewDayFormService: BrewDayFormService) { }
+  constructor(private brewDayFormService: BrewDayFormService, private pdfService: PdfService) { }
 
   ngOnInit() {
     this.brewDayFormSub = this.brewDayFormService.brewDayForm$
@@ -25,6 +26,7 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
         console.log(this.brewDayForm);
         console.log(this.recipe);
       });
+
   }
 
   ngOnDestroy() {
@@ -34,6 +36,7 @@ export class BrewDaysCreateComponent implements OnInit, OnDestroy {
   save() {
     console.log('log saved');
     console.log(this.brewDayForm.value);
+    this.pdfService.genBrewLogPdf(this.brewDayForm.value);
   }
 }
   // brewDayForm = this.fb.group({
