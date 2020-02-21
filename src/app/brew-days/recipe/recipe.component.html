@@ -21,9 +21,9 @@
       Hops <button class="btn btn-sm btn-primary" (click)="addHops()">+ Add Hops</button>
     </div>
     <div class="card-body">
-      <div class="row" *ngFor="let hops of recipeForm.controls.hops?.controls; let i=index"
+      <div class="row" *ngFor="let hop of recipeForm.controls.hops?.controls; let i=index"
         [class.bg-light]="i%2==0">
-        <app-hop></app-hop>
+        <app-hop [index]="i" [hopForm]="hop" (deleteHop)="deleteHop($event)"></app-hop>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
     <div class="card-body">
       <div class="row" *ngFor="let addition of recipeForm.controls.additions?.controls; let i=index"
         [class.bg-light]="i%2==0">
-        <app-addition></app-addition>
+        <app-addition [index]="i" [additionForm]="addition" (deleteAddition)="deleteAddition($event)"></app-addition>
       </div>
     </div>
   </div>

@@ -1,7 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { FormGroup, FormArray, FormControl, FormBuilder } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { RecipeFormService } from './recipe-form.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { GrainForm } from './grain/_models/grain-form.model';
 import { Grain } from './grain/_models/grain.model';
 
@@ -19,17 +17,41 @@ export class RecipeComponent implements OnInit {
     console.log(this.recipeForm);
   }
 
-  addGrain() {
-    const currentGrains = this.recipeForm.get('grains') as FormArray;
+  get currentGrains() { return this.recipeForm.get('grains') as FormArray; }
+  get currentHops() { return this.recipeForm.get('hops') as FormArray; }
+  get currentAdditions() { return this.recipeForm.get('additions') as FormArray; }
 
-    currentGrains.push(
+  addGrain() {
+    this.currentGrains.push(
       this.fb.group(new GrainForm(new Grain()))
     );
     console.log(this.recipeForm);
   }
 
   deleteGrain(index: number) {
-    // this.recipeFormService.deleteGrain(index);
+    this.currentGrains.removeAt(index);
+  }
+
+  addHops() {
+    this.currentHops.push(
+      this.fb.group(new GrainForm(new Grain()))
+    );
+    console.log(this.recipeForm);
+  }
+
+  deleteHop(index: number) {
+    this.currentHops.removeAt(index);
+  }
+
+  addAdditions() {
+    this.currentAdditions.push(
+      this.fb.group(new GrainForm(new Grain()))
+    );
+    console.log(this.recipeForm);
+  }
+
+  deleteAddition(index: number) {
+    this.currentAdditions.removeAt(index);
   }
 
   // recipeFormSub: Subscription;

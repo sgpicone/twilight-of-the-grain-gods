@@ -21,6 +21,7 @@ export class BrewDayForm {
     postBoilVolume = new FormControl();
     volumeIntoFermenter = new FormControl();
     originalGravity = new FormControl();
+    finalGravity = new FormControl();
     notes = new FormControl();
 
     constructor(brewDay: BrewDay, private fb: FormBuilder) {
@@ -47,5 +48,6 @@ export class BrewDayForm {
         this.postBoilVolume.setValidators([Validators.required]);
         this.volumeIntoFermenter.setValidators([Validators.required]);
         this.originalGravity.setValidators([Validators.required]);
+        this.finalGravity.setValidators([Validators.required]);
     }
 }

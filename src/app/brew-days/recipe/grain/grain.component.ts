@@ -19,6 +19,7 @@ export class GrainComponent implements OnInit {
   ngOnInit() { }
 
   delete() {
+    console.log(`deleting ${this.index}`);
     this.deleteGrain.emit(this.index);
   }
 
