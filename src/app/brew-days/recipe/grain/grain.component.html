@@ -27,7 +27,8 @@
   <div class="form-row">
     <div class="form-group col-md-10 col-md-offset-1">
       <label for="name">Notes</label>
-      <input type="textarea" class="form-control" placeholder="Any additional notes" formControlName="notes">
+      <input type="textarea" class="form-control" placeholder="Any additional notes" formControlName="notes"
+      (keyup.enter)="emitEnter()">
     </div>
   </div>
 </form>

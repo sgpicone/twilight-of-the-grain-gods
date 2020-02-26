@@ -17,14 +17,29 @@ export class PdfService {
   }
 
   private brewDayToPdf(log: BrewDay) {
-    const grains = [['Grain', 'Amount']].concat(log.recipe.grains.map(g => [g.name, `${g.amount} ${g.amountUnit}`]));
+    const grains = [['Amount', 'Grain']].concat(log.recipe.grains.map(g => [`${g.amount} ${g.amountUnit}`, g.name]));
+    const hops = [['Amount', 'Hop', 'Alpha', 'Time', 'Stage']].concat(
+      log.recipe.hops.map(h => [
+        `${h.amount} ${h.amountUnit}`,
+        `${h.name}`,
+        `${h.alpha}%`,
+        `${h.additionTime}`,
+        `${h.additionStage}`
+      ]));
     return {
       content: [
         { text: `${log.recipe.name} - ${log.brewDate}`, style: 'header' },
         { text: `${log.brewerName}`, style: 'subheader' },
+        'Grain Bill',
         {
           table: {
             body: grains
+          }
+        },
+        'Hop Schedule',
+        {
+          table: {
+            body: hops
           }
         }
       ],

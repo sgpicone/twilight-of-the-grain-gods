@@ -11,6 +11,7 @@ export class GrainComponent implements OnInit {
   @Input() grainForm: FormGroup;
   @Input() index: number;
   @Output() deleteGrain: EventEmitter<number> = new EventEmitter();
+  @Output() enterPressed: EventEmitter<boolean> = new EventEmitter();
 
   units = UnitEnum;
 
@@ -21,6 +22,10 @@ export class GrainComponent implements OnInit {
   delete() {
     console.log(`deleting ${this.index}`);
     this.deleteGrain.emit(this.index);
+  }
+
+  emitEnter() {
+    this.enterPressed.emit(true);
   }
 
 }

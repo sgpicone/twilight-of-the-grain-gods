@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
-import { validateConfig } from '@angular/router/src/config';
+import { FormGroup } from '@angular/forms';
 import { BrewDayFormService } from '../brew-day-form.service';
 import { Subscription } from 'rxjs';
 import { PdfService } from 'src/app/shared/pdf/pdf.service';

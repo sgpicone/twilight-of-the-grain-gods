@@ -12,7 +12,7 @@
     <div class="card-body">
       <div class="row" *ngFor="let grain of recipeForm.controls.grains?.controls; let i=index"
         [class.bg-light]="i%2==0">
-        <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)"></app-grain>
+        <app-grain [index]="i" [grainForm]="grain" (deleteGrain)="deleteGrain($event)" (enterPressed)="addGrain()"></app-grain>
       </div>
     </div>
   </div>

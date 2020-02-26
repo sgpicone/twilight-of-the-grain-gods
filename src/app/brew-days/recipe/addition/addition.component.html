@@ -16,26 +16,24 @@
       </div>
     </div>
     <div class="form-group col-md-3">
-      <label for="name">Alpha %</label>
-      <input type="number" class="form-control" placeholder="AA %" formControlName="alpha">
+      <label for="purpose">Purpose</label>
+      <input type="text" class="form-control" placeholder="purpose" formControlName="purpose">
     </div>
     <div class="form-group col-md-3">
-      <label for="name">IBUs</label>
-      <input type="number" class="form-control" placeholder="IBUS (optional)" formControlName="ibuContent">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="name">Time</label>
-      <input type="number" class="form-control" placeholder="# mins" formControlName="additionTime">
-      <div class="input-group-append">
-        <select class="form-control" formControlName="additionStage">
-          <option *ngFor="let stage of stages | enumKeys" [value]="stage.value">{{stage.value}}</option>
-        </select>
+      <label for="additionTime">Time</label>
+      <div class="input-group">
+        <input type="number" class="form-control" placeholder="# mins" formControlName="additionTime">
+        <div class="input-group-append">
+          <select class="form-control" formControlName="additionStage">
+            <option *ngFor="let stage of stages | enumKeys" [value]="stage.value">{{stage.value}}</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-10 col-md-offset-1">
-      <label for="name">Notes</label>
+      <label for="notes">Notes</label>
       <input type="textarea" class="form-control" placeholder="Any additional notes" formControlName="notes">
     </div>
   </div>
