@@ -17,6 +17,7 @@ import { AppBootsModule } from '../app-boots.module';
 import { BrewLogCreateComponent } from './brew-log-create/brew-log-create.component';
 import { WaterComponent } from './water/water.component';
 import { YeastComponent } from './yeast/yeast.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { YeastComponent } from './yeast/yeast.component';
     BrewDaysRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AppBootsModule
+    AppBootsModule,
+    NgxPaginationModule
   ],
   providers: [BrewDayFormService]
 })
