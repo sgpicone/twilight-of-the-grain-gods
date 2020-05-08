@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
 
 @Component({
   selector: 'app-brew-days-list',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brew-days-list.component.scss']
 })
 export class BrewDaysListComponent implements OnInit {
+
+  curPage = 1;
+  itemsPerPage = 10;
+  brewDays = Array.from(Array(100).keys());
 
   constructor() { }
 

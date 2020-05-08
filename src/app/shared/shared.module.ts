@@ -7,6 +7,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AppBootsModule } from '../app-boots.module';
 import { RouterModule } from '@angular/router';
 import { EnumKeysPipe } from './enum-keys.pipe';
+import { TestPaginationControlsComponent } from './test-pagination-controls/test-pagination-controls.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -14,19 +16,22 @@ import { EnumKeysPipe } from './enum-keys.pipe';
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    EnumKeysPipe
+    EnumKeysPipe,
+    TestPaginationControlsComponent
   ],
   imports: [
     CommonModule,
     AppBootsModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   exports: [
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    EnumKeysPipe
+    EnumKeysPipe,
+    TestPaginationControlsComponent
   ]
 })
 export class SharedModule { }
