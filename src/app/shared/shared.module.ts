@@ -8,6 +8,8 @@ import { AppBootsModule } from '../app-boots.module';
 import { RouterModule } from '@angular/router';
 import { EnumKeysPipe } from './enum-keys.pipe';
 import { PdfService } from './pdf/pdf.service';
+import { TestPaginationControlsComponent } from './test-pagination-controls/test-pagination-controls.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { PdfService } from './pdf/pdf.service';
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    EnumKeysPipe
+    EnumKeysPipe,
+    TestPaginationControlsComponent
   ],
   imports: [
     CommonModule,
     AppBootsModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   exports: [
     NotFoundComponent,
@@ -29,6 +33,10 @@ import { PdfService } from './pdf/pdf.service';
     NavigationComponent,
     EnumKeysPipe
   ],
-  providers: [PdfService]
+  providers: [
+    PdfService,
+    EnumKeysPipe,
+    TestPaginationControlsComponent
+  ]
 })
 export class SharedModule { }
