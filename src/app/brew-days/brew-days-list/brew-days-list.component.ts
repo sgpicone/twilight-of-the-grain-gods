@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationInstance } from 'ngx-pagination';
 
 @Component({
   selector: 'app-brew-days-list',

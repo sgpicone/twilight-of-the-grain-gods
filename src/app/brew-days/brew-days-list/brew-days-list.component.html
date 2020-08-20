@@ -1,8 +1,5 @@
-Showing items {{ ((curPage-1) * itemsPerPage) + 1 }} thru {{ ((brewDays.length/itemsPerPage) * curPage) }}
 <ul>
-  <li *ngFor="let item of brewDays | paginate: {itemsPerPage: itemsPerPage, currentPage: curPage}">
+  <li *ngFor="let item of brewDays" >
     {{item}}
   </li>
 </ul>
-
-<app-test-pagination-controls (pageChange)="curPage = $event"></app-test-pagination-controls>
