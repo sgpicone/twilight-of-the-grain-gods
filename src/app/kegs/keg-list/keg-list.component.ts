@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KegService } from '../keg.service';
+import { Subscription } from 'rxjs';
+import { Keg } from '../_models/keg';
 
 @Component({
   selector: 'app-keg-list',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KegListComponent implements OnInit {
 
-  constructor() { }
+  kegs: Keg[];
+
+  constructor(private kegService: KegService) { 
+    this.kegs = [];
+  }
 
   ngOnInit() {
+    this.kegService.list().subscribe((kegs: Keg[]) => {
+      this.kegs = kegs;
+    });
   }
 
 }

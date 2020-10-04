@@ -1,3 +1,8 @@
 <p>
   keg-list works!
 </p>
+<ul>
+  <li *ngFor="let keg of kegs">
+    {{keg.rwbId}} -- {{keg.datePurchased | date }}
+  </li>
+</ul>
