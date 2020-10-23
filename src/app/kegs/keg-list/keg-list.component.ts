@@ -12,13 +12,14 @@ export class KegListComponent implements OnInit {
 
   kegs: Keg[];
 
-  constructor(private kegService: KegService) { 
+  constructor(private kegService: KegService) {
     this.kegs = [];
   }
 
   ngOnInit() {
     this.kegService.list().subscribe((kegs: Keg[]) => {
       this.kegs = kegs;
+      console.log(this.kegs);
     });
   }
 

@@ -1,3 +1,37 @@
-<p>
-  keg-info works!
-</p>
+<div class="container" *ngIf="keg">
+  <div class="row">
+    <h1>{{keg.rwbId}}</h1>
+    <h2>{{keg.factorySerial}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      Purchase date:
+    </div>
+    <div class="col-sm-10">
+      {{keg.datePurchased | date}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10">Wash History</div>
+    <table>
+      <thead>
+        <th>Date</th>
+        <th>Chemical</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let wash of keg.washHistory">
+          <td>{{wash.date}}</td>
+          <td>{{wash.chemical}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-sm-10">Sani History</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10">Sale History</div>
+  </div>
+
+
+</div>

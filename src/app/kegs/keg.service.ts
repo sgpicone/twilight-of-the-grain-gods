@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Keg, KegAdapter } from './_models/keg';
 
 @Injectable({
@@ -23,7 +23,10 @@ export class KegService {
   }
 
   public getKegById(id: number) {
-    return this.http.get(`${this.baseUrl}/kegs/${id}`);
+    const url = `${this.baseUrl}/kegs/${id}`;
+    return this.http.get(url).pipe(
+      map((item) => this.adapter.adapt(item))
+    );
   }
 
 }

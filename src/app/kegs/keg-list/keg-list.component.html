@@ -3,6 +3,8 @@
 </p>
 <ul>
   <li *ngFor="let keg of kegs">
-    {{keg.rwbId}} -- {{keg.datePurchased | date }}
+    <a routerLink='../detail/{{keg.id}}'>
+      <span>{{keg.rwbId}} -- {{keg.datePurchased | date }}</span>
+    </a>
   </li>
 </ul>
