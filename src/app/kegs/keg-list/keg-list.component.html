@@ -1,10 +1,23 @@
-<p>
-  keg-list works!
-</p>
-<ul>
-  <li *ngFor="let keg of kegs">
-    <a routerLink='../detail/{{keg.id}}'>
-      <span>{{keg.rwbId}} -- {{keg.datePurchased | date }}</span>
-    </a>
-  </li>
-</ul>
+<h1>Keg List</h1>
+<table class="table">
+  <thead>
+    <th>RWB Id</th>
+    <th>Factory Serial</th>
+    <th>Type</th>
+    <th>Purchase Date</th>
+    <th>Last Wash Date</th>
+    <th>Last Sani Date</th>
+    <th>Last Sale Date</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let keg of kegs">
+      <td><a routerLink='../detail/{{keg.id}}'>{{keg.rwbId}}</a></td>
+      <td>{{keg.factorySerial}}</td>
+      <td>{{keg.kegType}}</td>
+      <td>{{keg.datePurchased | date}}</td>
+      <td>{{keg.lastWashDate | date}}</td>
+      <td>{{keg.lastSaniDate | date}}</td>
+      <td>{{keg.lastSaleDate | date}}</td>
+    </tr>
+  </tbody>
+</table>
