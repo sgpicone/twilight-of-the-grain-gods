@@ -27,7 +27,7 @@
       <tbody>
         <tr *ngFor="let wash of keg.washHistory">
           <td>{{wash.date | date}}</td>
-          <td>{{wash.chemical}}</td>
+          <td>{{wash.chemicals}}</td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +46,7 @@
       <tbody>
         <tr *ngFor="let sani of keg.saniHistory">
           <td>{{sani.date | date}}</td>
-          <td>{{sani.chemical}}</td>
+          <td>{{sani.chemicals}}</td>
         </tr>
       </tbody>
     </table>

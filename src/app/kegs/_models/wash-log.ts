@@ -4,7 +4,7 @@ import { Adapter } from '../../shared/adapter';
 export class WashLog {
     constructor(
         public date: Date,
-        public chemical: string
+        public chemicals: string
     ) { }
 }
 
@@ -13,7 +13,11 @@ export class WashLog {
 })
 export class WashLogAdapter implements Adapter<WashLog> {
     adapt(item: any): WashLog {
-        return new WashLog(item.date,
-            item.chemical);
+        return new WashLog(item.WashDate,
+            item.WashChemicals);
+    }
+
+    adaptList(itemList: Array<any>): Array<WashLog> {
+        return itemList.map(item => this.adapt(item));
     }
 }
